@@ -34,9 +34,7 @@
     "passport-jwt": "^4.0.1",
     "resend": "^4.5.1",
     "uuid": "^11.1.0",
-    "zod": "^3.25.46"
-  },
-  "devDependencies": {
+    "zod": "^3.25.46",
     "@types/bcrypt": "^5.0.2",
     "@types/cookie-parser": "^1.4.8",
     "@types/cors": "^2.8.18",
@@ -48,6 +46,9 @@
     "@types/node-cron": "^3.0.11",
     "@types/passport": "^1.0.17",
     "@types/passport-jwt": "^4.0.1",
+    "@types/jsonwebtoken": "^9.0.6"
+  },
+  "devDependencies": {
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.8.3"
   }
