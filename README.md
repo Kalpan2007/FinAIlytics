@@ -426,9 +426,6 @@ Personal usage permitted. For commercial usage, follow the original project's li
 
 ### 🌟 If you find this project useful, please give it a star!
 
-**Made with ❤️ and ☕**
-
-[![GitHub Stars](https://img.shields.io/github/stars/kalpan2007/finailytics?style=social)](https://github.com/kalpan2007/finailytics)
-[![GitHub Forks](https://img.shields.io/github/forks/kalpan2007/finailytics?style=social)](https://github.com/kalpan2007/finailytics/fork)
+**Made with 💻 and ☕**
 
 </div>
