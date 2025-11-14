@@ -45,6 +45,11 @@ app.get(
   })
 );
 
+// Simple health check for deploys/monitors
+app.get("/healthz", (req: Request, res: Response) => {
+  res.status(HTTPSTATUS.OK).json({ status: "ok" });
+});
+
 app.use(`${BASE_PATH}/auth`, authRoutes);
 app.use(`${BASE_PATH}/user`, passportAuthenticateJwt, userRoutes);
 app.use(`${BASE_PATH}/transaction`, passportAuthenticateJwt, transactionRoutes);
