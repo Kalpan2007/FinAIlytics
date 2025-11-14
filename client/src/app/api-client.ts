@@ -1,7 +1,19 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { RootState } from "./store";
 
-const API_BASE = (import.meta as any).env?.VITE_API_URL || "http://localhost:8000/api";
+const env = (import.meta as any).env || {};
+let API_BASE: string = env.VITE_API_URL || env.VITE_API_BASE_URL || "";
+// Ensure BASE_PATH (/api) is present once
+if (API_BASE) {
+  API_BASE = API_BASE.replace(/\/$/, "");
+  if (!/\/api\/?$/.test(API_BASE)) {
+    API_BASE = `${API_BASE}/api`;
+  }
+}
+// Final fallback for local development
+if (!API_BASE) {
+  API_BASE = "http://localhost:8000/api";
+}
 
 const baseQuery = fetchBaseQuery({
   baseUrl: API_BASE,
