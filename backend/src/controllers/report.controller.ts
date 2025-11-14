@@ -42,9 +42,29 @@ export const updateReportSettingController = asyncHandler(
 export const generateReportController = asyncHandler(
   async (req: Request, res: Response) => {
     const userId = req.user?._id;
-    const { from, to } = req.query;
-    const fromDate = new Date(from as string);
-    const toDate = new Date(to as string);
+    const { from, to } = req.query as { from?: string; to?: string };
+
+    const parseDate = (value?: string) => {
+      if (!value) return null;
+      const d = new Date(value);
+      return isNaN(d.getTime()) ? null : d;
+    };
+
+    let toDate = parseDate(to) ?? new Date();
+    let fromDate = parseDate(from);
+
+    // Default range: last 30 days if from is missing/invalid
+    if (!fromDate) {
+      fromDate = new Date(toDate);
+      fromDate.setDate(fromDate.getDate() - 30);
+    }
+
+    // Ensure fromDate is not after toDate
+    if (fromDate > toDate) {
+      const tmp = fromDate;
+      fromDate = toDate;
+      toDate = tmp;
+    }
 
     const result = await generateReportService(userId, fromDate, toDate);
 
