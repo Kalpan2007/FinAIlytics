@@ -28,8 +28,10 @@ const SignIn = () => {
             FinAIlytics provides insights, monthly reports, CSV import, recurring transactions, all powered by advanced AI technology. 🚀
             </p>
           </div>
-          <div className="relative max-w-3xl h-full w-full overflow-hidden mt-3">
-          <img
+          <div className="relative max-w-3xl h-full w-full overflow-hidden mt-3 rounded-2xl ring-1 ring-border/60 shadow-xl">
+            {/* soft glow behind edges */}
+            <div className="pointer-events-none absolute -inset-4 rounded-3xl blur-2xl opacity-25 bg-gradient-to-br from-primary/30 via-emerald-500/10 to-transparent" />
+            <img
               src={theme === "dark" ? dashboardImgDark : dashboardImg}
               alt="Dashboard"
               className="absolute top-0 left-0 w-full h-full object-cover"
