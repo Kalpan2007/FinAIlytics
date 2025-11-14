@@ -1,6 +1,6 @@
 <div align="center">
 
-# 💰 FinAIlytics
+# 💰 FinAIlytics [![Demo Video](https://img.shields.io/badge/Demo_Video-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](YOUR_YOUTUBE_LINK_HERE)
 
 ### AI-Powered Personal Finance Management Platform
 
