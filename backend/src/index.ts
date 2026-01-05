@@ -21,6 +21,8 @@ import analyticsRoutes from "./routes/analytics.route";
 const app = express();
 const BASE_PATH = Env.BASE_PATH;
 
+app.set("trust proxy", 1);
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
